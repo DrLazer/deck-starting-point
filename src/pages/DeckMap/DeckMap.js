@@ -2,6 +2,7 @@ import React from 'react';
 import './deck-map.scss';
 
 import SideMenu from '../../components/SideMenu/SideMenu';
+import Map from '../../components/Map/Map';
 
 export default function DeckMap(props) {
   return (
@@ -10,7 +11,7 @@ export default function DeckMap(props) {
         <SideMenu/>
       </div>
       <div className='deck-map-main-panel'>
-        {props.children}
+        <Map/>
       </div>
     </div>
   )
