@@ -10,7 +10,7 @@ export default function DeckMap(props) {
       <div className='deck-map-sidebar'>
         <SideMenu/>
       </div>
-      <div className='deck-map-main-panel'>
+      <div className='deck-map-main-panel' style={{position:"relative", height:'100vh'}}>
         <Map/>
       </div>
     </div>

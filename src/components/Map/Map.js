@@ -1,7 +1,9 @@
 import React from 'react';
 import DeckGL from '@deck.gl/react';
 import {LineLayer} from '@deck.gl/layers';
+import {StaticMap} from 'react-map-gl';
 
+import Settings from '../../Settings'
 import './map.scss';
 
 export default function Map(props) {
@@ -25,14 +27,14 @@ export default function Map(props) {
   ];
 
   return (
-    <>
-      <div className='content'>
-        <DeckGL
-          initialViewState={INITIAL_VIEW_STATE}
-          controller={true}
-          layers={layers} />
-      </div>
-    </>
+    <div className='content'>
+      <DeckGL
+        initialViewState={INITIAL_VIEW_STATE}
+        controller={true}
+        layers={layers} >
+        <StaticMap mapboxApiAccessToken={Settings.MAPBOX_KEY} />
+      </DeckGL>
+    </div>
   )
 
 }
