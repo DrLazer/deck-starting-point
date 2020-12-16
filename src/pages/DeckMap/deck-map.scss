@@ -1,0 +1,20 @@
+$menu-width: 200px;
+
+.deck-map-sidebar {
+    height: 100%;
+    width: $menu-width;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: green;
+    overflow-x: hidden;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.deck-map-main-panel {
+    margin-left: $menu-width;
+    font-size: 28px;
+    padding: 3.25rem 3rem 3.25rem 3rem;
+    font-family: 'Varela Round', sans-serif;
+}

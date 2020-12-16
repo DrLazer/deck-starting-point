@@ -1,0 +1,24 @@
+.side-menu {
+    &__list { 
+        .MuiListItemIcon-root{
+            min-width: 30px;
+            margin-bottom:  0.4rem;
+        }
+
+        &__icon-container {
+            margin-top: 0.15rem;
+        }
+        
+        &__icon {
+            color: black;
+        }
+
+        &__link {
+            color: black;
+            font-size: 0.95rem;
+            font-weight: 400;
+            padding-top: 0.4rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+}
