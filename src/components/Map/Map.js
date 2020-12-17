@@ -1,6 +1,5 @@
 import React from 'react';
 import DeckGL from '@deck.gl/react';
-import {LineLayer} from '@deck.gl/layers';
 import {StaticMap} from 'react-map-gl';
 
 import Settings from '../../Settings'
@@ -17,21 +16,11 @@ export default function Map(props) {
     bearing: 0
   };
 
-  // Data to be used by the LineLayer
-  const data = [
-    {sourcePosition: [-122.41669, 37.7853], targetPosition: [-122.41669, 37.781]}
-  ];
-
-  const layers = [
-    new LineLayer({id: 'line-layer', data})
-  ];
-
   return (
     <div className='content'>
       <DeckGL
         initialViewState={INITIAL_VIEW_STATE}
-        controller={true}
-        layers={layers} >
+        controller={true} >
         <StaticMap mapboxApiAccessToken={Settings.MAPBOX_KEY} />
       </DeckGL>
     </div>

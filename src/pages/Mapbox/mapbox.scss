@@ -1,6 +1,6 @@
 $menu-width: 200px;
 
-.deck-map-sidebar {
+.mapbox-sidebar {
     height: 100%;
     width: $menu-width;
     position: fixed;
@@ -12,9 +12,14 @@ $menu-width: 200px;
     font-family: 'Varela Round', sans-serif;
 }
 
-.deck-map-main-panel {
+.mapbox-main-panel {
     margin-left: $menu-width;
     font-size: 28px;
-    padding: 3.25rem 3rem 3.25rem 3rem;
     font-family: 'Varela Round', sans-serif;
+
+    &__map-container {
+        position: relative;
+        height: 100vh;
+    }
+
 }
