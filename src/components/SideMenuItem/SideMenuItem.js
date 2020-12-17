@@ -3,12 +3,14 @@ import { NavLink } from "react-router-dom";
 import { MenuItem, ListItemIcon, Typography } from '@material-ui/core';
 
 import MapIcon from '@material-ui/icons/Map';
+import CarIcon from '@material-ui/icons/DirectionsCar';
+
 
 import './side-menu-item.scss';
 
 export default function SideMenuItem(props) {
   
-  const iconsMap = { MapIcon }
+  const iconsMap = { MapIcon, CarIcon }
 
   const IconTag = iconsMap[ props.icon ]
   

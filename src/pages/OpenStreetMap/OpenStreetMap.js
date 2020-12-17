@@ -6,6 +6,17 @@ import Map from '../../components/Map/Map';
 import MapTypes from '../../components/Map/MapTypes';
 
 export default function OpenStreetMap(props) {
+
+  const viewState = {
+    longitude: -122.41669,
+    latitude: 37.7853,
+    zoom: 13,
+    maxZoom: 20,
+    maxPitch: 89,
+    pitch: 0,
+    bearing: 0
+  }
+
   return (
     <div>
       <div className='mapbox-sidebar'>
@@ -13,7 +24,7 @@ export default function OpenStreetMap(props) {
       </div>
       <div className='mapbox-main-panel'>
         <div className='mapbox-main-panel__map-container'>
-          <Map type={MapTypes.OPENSTREETMAP}/>
+          <Map type={MapTypes.OPENSTREETMAP}  viewState={viewState}/>
         </div>
       </div>
     </div>

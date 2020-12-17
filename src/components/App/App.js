@@ -15,6 +15,7 @@ function App() {
         <Route path='/street' exact render={() => <Mapbox mapType={MapTypes.MAPBOX.STREET} key={3} />}></Route>
         <Route path='/outdoors' exact render={() => <Mapbox mapType={MapTypes.MAPBOX.OUTDOORS} key={4} />}></Route>
         <Route path='/satellite' exact render={() => <Mapbox mapType={MapTypes.MAPBOX.SATELLITE} key={5} />}></Route>
+        <Route path='/accidents' exact render={() => <Mapbox mapType={MapTypes.MAPBOX.LIGHT} key={6} />}></Route>
         <Route path='/openstreetmap' exact component={OpenStreetMap}></Route>
       </Switch>
     </Router>

@@ -12,7 +12,8 @@ export default function SideMenu(props) {
     { text: 'Mapbox Street', url: '/street', icon: 'MapIcon' },
     { text: 'Mapbox Outdoors', url: '/outdoors', icon: 'MapIcon' },
     { text: 'Mapbox Satellite', url: '/satellite', icon: 'MapIcon' },
-    { text: 'OpenStreetMap', url: '/openstreetmap', icon: 'MapIcon'}
+    { text: 'OpenStreetMap', url: '/openstreetmap', icon: 'MapIcon'},
+    { text: 'Accidents', url: '/accidents', icon: 'CarIcon'}
   ]
 
   return (
