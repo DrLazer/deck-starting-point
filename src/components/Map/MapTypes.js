@@ -4,7 +4,7 @@ export default {
     DARK: 'mapbox://styles/mapbox/dark-v10',
     STREET: 'mapbox://styles/mapbox/streets-v11',
     OUTDOORS: 'mapbox://styles/mapbox/outdoors-v11',
-    STAELLITE: 'mapbox://styles/mapbox/satellite-v9',
+    SATELLITE: 'mapbox://styles/mapbox/satellite-v9',
   },
   OPENSTREETMAP: 'openstreetmap'
 };

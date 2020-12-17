@@ -6,13 +6,14 @@ import './side-menu.scss';
 
 export default function SideMenu(props) {
 
-  const links = [{
-    text: 'Deck, Mapbox Light', url: '/', icon: 'MapIcon', 
-  }, {
-    text: 'Deck, Mapbox Dark', url: '/dark', icon: 'MapIcon', 
-  }, { 
-    text: 'Deck, OpenStreetMap', url: '/openstreetmap', icon: 'MapIcon'
-  }]
+  const links = [
+    { text: 'Mapbox Light', url: '/', icon: 'MapIcon' },
+    { text: 'Mapbox Dark', url: '/dark', icon: 'MapIcon' },
+    { text: 'Mapbox Street', url: '/street', icon: 'MapIcon' },
+    { text: 'Mapbox Outdoors', url: '/outdoors', icon: 'MapIcon' },
+    { text: 'Mapbox Satellite', url: '/satellite', icon: 'MapIcon' },
+    { text: 'OpenStreetMap', url: '/openstreetmap', icon: 'MapIcon'}
+  ]
 
   return (
     <div className='side-menu'>
