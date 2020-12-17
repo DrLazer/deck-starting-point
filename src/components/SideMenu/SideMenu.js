@@ -7,7 +7,9 @@ import './side-menu.scss';
 export default function SideMenu(props) {
 
   const links = [{
-    text: 'Deck - Mapbox', url: '/', icon: 'DescriptionIcon'
+    text: 'Deck - Mapbox', url: '/', icon: 'MapIcon', 
+  }, { 
+    text: 'Deck - OpenStreetMap', url: '/openstreetmap', icon: 'MapIcon'
   }]
 
   return (
