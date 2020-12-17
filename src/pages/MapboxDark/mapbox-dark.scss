@@ -1,0 +1,25 @@
+$menu-width: 200px;
+
+.mapbox-sidebar {
+    height: 100%;
+    width: $menu-width;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: green;
+    overflow-x: hidden;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.mapbox-main-panel {
+    margin-left: $menu-width;
+    font-size: 28px;
+    font-family: 'Varela Round', sans-serif;
+
+    &__map-container {
+        position: relative;
+        height: 100vh;
+    }
+
+}

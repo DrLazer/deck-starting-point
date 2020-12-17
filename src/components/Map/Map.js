@@ -28,20 +28,23 @@ export default function Map(props) {
   return (
     <div className='content'>
 
-      {props.type === MapType.MAPBOX.LIGHT && (
-        <DeckGL
-          initialViewState={INITIAL_VIEW_STATE}
-          controller={true} >
-          <StaticMap mapboxApiAccessToken={Settings.MAPBOX_KEY} />  
-        </DeckGL>
-      )}
-
       {props.type === MapType.OPENSTREETMAP && (
         <DeckGL
           layers={[OpenStreetMapTileLayer]}
           views={new MapView({repeat: true})}
           initialViewState={INITIAL_VIEW_STATE}
           controller={true} >
+        </DeckGL>
+      )}
+      
+      {/* Mapbox */}
+      {props.type !== MapType.OPENSTREETMAP && (
+        <DeckGL
+          initialViewState={INITIAL_VIEW_STATE} 
+          controller={true} >
+          <StaticMap 
+            mapboxApiAccessToken={Settings.MAPBOX_KEY}
+            mapStyle={ props.type } />  
         </DeckGL>
       )}
 
