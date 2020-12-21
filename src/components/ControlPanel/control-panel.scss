@@ -1,0 +1,11 @@
+@import '../../styles/colours.scss';
+
+.control-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    background-color: $yellow;
+    width: 44px;
+    height: 44px;
+}

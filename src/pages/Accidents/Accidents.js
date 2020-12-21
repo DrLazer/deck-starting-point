@@ -60,7 +60,8 @@ export default function Accidents(props) {
           transitions: {
             getLineColor: 1000,
             getLineWidth: 1000
-          }
+          },
+
         });
 
         setGeoJsonLayer(geoJson);
@@ -78,6 +79,7 @@ export default function Accidents(props) {
           <div className='accidents-main-panel'>
             <div className='accidents-main-panel__map-container'>
               <Map
+                controlPanel={true}
                 layers={[geoJsonLayer]}
                 type={MapTypes.MAPBOX.DARK} 
                 viewState={viewState}
