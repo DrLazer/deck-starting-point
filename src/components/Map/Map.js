@@ -1,21 +1,15 @@
 import React from 'react';
 import DeckGL from '@deck.gl/react';
-
-/* imports required for mapbox */
-import {StaticMap} from 'react-map-gl';
-import Settings from '../../Settings'
-
-/* imports required for open street map */
-import OpenStreetMapTileLayer from '../Map/Layers/TileLayers/OpenStreetMapTileLayer';
+import {StaticMap} from 'react-map-gl'
 import {MapView} from '@deck.gl/core';
 
+import Settings from '../../Settings'
 import MapType from '../Map/MapTypes';
 import './map.scss';
 
 export default function Map(props) {
 
-  // Viewport settings
-  const INITIAL_VIEW_STATE = {
+  var viewState = {
     longitude: -122.41669,
     latitude: 37.7853,
     zoom: 13,
@@ -25,28 +19,24 @@ export default function Map(props) {
     bearing: 0
   };
 
+  if(props.viewState) {
+    viewState = props.viewState;
+  }
+
   return (
     <div className='content'>
 
-      {props.type === MapType.OPENSTREETMAP && (
         <DeckGL
-          layers={[OpenStreetMapTileLayer]}
+          layers={props.layers}
           views={new MapView({repeat: true})}
-          initialViewState={INITIAL_VIEW_STATE}
+          initialViewState={viewState}
           controller={true} >
+          {props.type !== MapType.OPENSTREETMAP && (
+            <StaticMap 
+              mapboxApiAccessToken={Settings.MAPBOX_KEY}
+              mapStyle={ props.type } />  
+          )}
         </DeckGL>
-      )}
-      
-      {/* Mapbox */}
-      {props.type !== MapType.OPENSTREETMAP && (
-        <DeckGL
-          initialViewState={INITIAL_VIEW_STATE} 
-          controller={true} >
-          <StaticMap 
-            mapboxApiAccessToken={Settings.MAPBOX_KEY}
-            mapStyle={ props.type } />  
-        </DeckGL>
-      )}
 
     </div>
   )
