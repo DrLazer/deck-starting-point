@@ -6,12 +6,15 @@ import {MapView} from '@deck.gl/core';
 import Settings from '../../Settings'
 import MapType from '../Map/MapTypes';
 import ControlPanel from '../ControlPanel/ControlPanel';
+import ControlPanelTools from './../../components/ControlPanel/ControlPanelTools';
+import { useGlobalState } from '../../context/GlobalContext';
 import './map.scss';
 
 export default function Map(props) {
 
-  const [hoverInfo, setHoverInfo] = useState({});
+  const { activeTool, setActiveTool } = useGlobalState();
 
+  const [hoverInfo, setHoverInfo] = useState({});
 
   var viewState = {
     longitude: -122.41669,
@@ -41,7 +44,7 @@ export default function Map(props) {
               mapboxApiAccessToken={Settings.MAPBOX_KEY}
               mapStyle={ props.type } />  
           )}
-          {hoverInfo && hoverInfo.coordinate && (
+          {hoverInfo && hoverInfo.coordinate && activeTool === ControlPanelTools.BOUNDING_BOX && (
             <div style={{position: 'absolute', zIndex: 1, pointerEvents: 'none', left: hoverInfo.x, top: hoverInfo.y}}>
               { JSON.stringify(hoverInfo.coordinate) }
             </div>

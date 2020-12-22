@@ -8,4 +8,10 @@
     background-color: $yellow;
     width: 44px;
     height: 132px;
+
+    .active-tool {
+        .MuiSvgIcon-root {
+            color: $white;
+        }
+    }
 }
