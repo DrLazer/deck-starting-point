@@ -31,7 +31,7 @@ export default function Map(props) {
     <div className='content'>
 
         <DeckGL
-          onHover= {info => { setHoverInfo(info); console.log(info); }}
+          onHover= {info => { setHoverInfo(info); }}
           layers={props.layers}
           views={new MapView({repeat: true})}
           initialViewState={viewState}
